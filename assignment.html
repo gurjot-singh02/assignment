@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body style="text-align: center; padding: 10px; border-color: black; background-color: blanchedalmond;" >
+    
+<div >
+    <input type="text" id="exp" placeholder="Enter Expression">
+    <button type="submit" onclick="sol()">Evaluate</button>
+</div>
+
+<div style="text-align: center; padding: 10px;">
+    <input type="text" id="area" placeholder="Enter radius">
+    <button type="submit" onclick="area1()">Calculate area of square</button>
+    <button type="submit" onclick="area2()">Calculate area of circle</button>
+</div>
+
+<div style="text-align: center; padding: 10px;">
+    <input type="text" id="n" placeholder="Enter n">
+    <button type="submit" onclick="prime()">Calculate nth prime</button>
+</div>
+
+<script>
+
+    function sol(){
+        var x=document.getElementById('exp').value
+        var result=eval(x);
+        document.write(result);
+    }
+    function area1(){
+        var x=document.getElementById('area').value
+        var result=eval(x*x);
+        document.write(result)
+    }
+    function area2(){
+        var x=document.getElementById('area').value
+        var result=eval(x*x*3.14);
+        document.write(result)
+    }
+    function main(inp) {
+    var count = 0;
+    for (var i = 2; i <= 100000; i++) {
+    if (isPrime(i)) count = count + 1;
+    if (count == inp) return i;
+    }
+  }
+    function isPrime(i) {
+    for (var j = 2; j < i; j++) {
+    if (i % j == 0) {
+    return false
+    }
+  }
+    return true
+  }
+function prime(){
+    var num=document.getElementById('n').value
+    var result=main(num)
+    document.write(result)
+}
+</script>
+
+</body>
+</html>
